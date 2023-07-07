@@ -1,0 +1,30 @@
+import random
+
+print("Bem-vinde ao jogo")
+print("As regras do jogo são:")
+print("1. Não utilize intervalos de números negativos;")
+print("2. Para desistir da adivinhação, digite -1;")
+print()
+print("Primeiro você deve escolher um intervalo númerico do conjunto dos inteiros positivos")
+comeco = int(input("Digite o limite inferior que o intervalo terá: "))
+fim = int(input("Digite o limite superior que o intervalo terá: "))
+print()
+
+num = random.randint(comeco, fim)
+
+print("Tudo certo! Agora chegou a hora de adivinhar.")
+
+chute = int(input(f"Que número entre {comeco} e {fim} você acha que eu pensei? "))
+if chute == num:
+    print(f"Parabéns, você acertou! O número que eu pensei era o {num}")  
+
+while chute != num:
+      tentativa = int(input(f"Você errou, tente novamente. Que número entre {comeco} e {fim} você acha que eu pensei? "))
+      if tentativa == -1:
+        print(f"Que pena que desistiu :( O número que eu estava pensando era o {num}")
+        break
+      elif tentativa == num:
+        print(f"Parabéns, você acertou! O número que eu pensei era {num}")
+        break
+      chute = tentativa
+  
